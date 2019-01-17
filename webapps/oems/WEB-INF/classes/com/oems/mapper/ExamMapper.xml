@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.oems.mapper.ExamMapper" >
+  <resultMap id="BaseResultMap" type="com.oems.entity.Exam" >
+    <id column="exam_id" property="examId" jdbcType="VARCHAR" />
+    <result column="exam_name" property="examName" jdbcType="VARCHAR" />
+    <result column="exam_type" property="examType" jdbcType="VARCHAR" />
+    <result column="exam_answer" property="examAnswer" jdbcType="VARCHAR" />
+    <result column="exam_score" property="examScore" jdbcType="DOUBLE" />
+    <result column="exam_testid" property="examTestid" jdbcType="VARCHAR" />
+    <result column="exam_mark" property="examMark" jdbcType="VARCHAR" />
+    <collection  property="examinfo" javaType="com.oems.entity.Examinfo" >
+		   <id column="examinfo_id" property="examinfoId" />
+		    <result column="examinfo_name" property="examinfoName" jdbcType="VARCHAR" />
+		    <result column="examinfo_time" property="examinfoTime" jdbcType="TIMESTAMP" />
+		    <result column="examinfo_starttime" property="examinfoStarttime" jdbcType="TIMESTAMP" />
+		    <result column="examinfo_endtime" property="examinfoEndtime" jdbcType="TIMESTAMP" />
+		    <result column="examinfo_people" property="examinfoPeople" jdbcType="VARCHAR" />
+		    <result column="examinfo_context" property="examinfoContext" jdbcType="VARCHAR" />
+		    <result column="examinfo_mark" property="examinfoMark" jdbcType="VARCHAR" />
+	   </collection>
+	   <collection  property="test" javaType="com.oems.entity.Test" >
+		     <id column="test_id" property="testId" jdbcType="VARCHAR" />
+			    <result column="test_name" property="testName" jdbcType="VARCHAR" />
+			    <result column="test_class" property="testClass" jdbcType="VARCHAR" />
+			    <result column="test_score" property="testScore" jdbcType="DOUBLE" />
+			    <result column="test_time" property="testTime" jdbcType="TIMESTAMP" />
+			    <result column="test_type" property="testType" jdbcType="VARCHAR" />
+			    <result column="test_mark" property="testMark" jdbcType="VARCHAR" />
+	   </collection>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    exam_id, exam_name, exam_type, exam_answer, exam_score, exam_testid, exam_mark
+  </sql>
+  
+  <select id="selectExamid" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    exam_id
+    from exam
+    where exam_testid = #{examTestid,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectByPrimaryKey1" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from exam
+    where exam_testid = #{examTestid,jdbcType=VARCHAR}
+  </select>
+  
+   <!--  查找试卷编号为一的所有试题 -->
+ <select id="selectyi" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from exam
+    where exam_testid = #{examTestid,jdbcType=VARCHAR}
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from exam
+    where exam_id = #{examId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from exam
+    where exam_id = #{examId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oems.entity.Exam" >
+    insert into exam (exam_id, exam_name, exam_type, 
+      exam_answer, exam_score, exam_testid, 
+      exam_mark)
+    values (#{examId,jdbcType=VARCHAR}, #{examName,jdbcType=VARCHAR}, #{examType,jdbcType=VARCHAR}, 
+      #{examAnswer,jdbcType=VARCHAR}, #{examScore,jdbcType=DOUBLE}, #{examTestid,jdbcType=VARCHAR}, 
+      #{examMark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.oems.entity.Exam" >
+    insert into exam
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="examId != null" >
+        exam_id,
+      </if>
+      <if test="examName != null" >
+        exam_name,
+      </if>
+      <if test="examType != null" >
+        exam_type,
+      </if>
+      <if test="examAnswer != null" >
+        exam_answer,
+      </if>
+      <if test="examScore != null" >
+        exam_score,
+      </if>
+      <if test="examTestid != null" >
+        exam_testid,
+      </if>
+      <if test="examMark != null" >
+        exam_mark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="examId != null" >
+        #{examId,jdbcType=VARCHAR},
+      </if>
+      <if test="examName != null" >
+        #{examName,jdbcType=VARCHAR},
+      </if>
+      <if test="examType != null" >
+        #{examType,jdbcType=VARCHAR},
+      </if>
+      <if test="examAnswer != null" >
+        #{examAnswer,jdbcType=VARCHAR},
+      </if>
+      <if test="examScore != null" >
+        #{examScore,jdbcType=DOUBLE},
+      </if>
+      <if test="examTestid != null" >
+        #{examTestid,jdbcType=VARCHAR},
+      </if>
+      <if test="examMark != null" >
+        #{examMark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.oems.entity.Exam" >
+    update exam
+    <set >
+      <if test="examName != null" >
+        exam_name = #{examName,jdbcType=VARCHAR},
+      </if>
+      <if test="examType != null" >
+        exam_type = #{examType,jdbcType=VARCHAR},
+      </if>
+      <if test="examAnswer != null" >
+        exam_answer = #{examAnswer,jdbcType=VARCHAR},
+      </if>
+      <if test="examScore != null" >
+        exam_score = #{examScore,jdbcType=DOUBLE},
+      </if>
+      <if test="examTestid != null" >
+        exam_testid = #{examTestid,jdbcType=VARCHAR},
+      </if>
+      <if test="examMark != null" >
+        exam_mark = #{examMark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where exam_id = #{examId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.oems.entity.Exam" >
+    update exam
+    set exam_name = #{examName,jdbcType=VARCHAR},
+      exam_type = #{examType,jdbcType=VARCHAR},
+      exam_answer = #{examAnswer,jdbcType=VARCHAR},
+      exam_score = #{examScore,jdbcType=DOUBLE},
+      exam_testid = #{examTestid,jdbcType=VARCHAR},
+      exam_mark = #{examMark,jdbcType=VARCHAR}
+    where exam_id = #{examId,jdbcType=VARCHAR}
+  </update>
+</mapper>

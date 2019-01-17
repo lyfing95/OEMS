@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.oems.mapper.ExaminfoMapper" >
+  <resultMap id="BaseResultMap" type="com.oems.entity.Examinfo" >
+    <id column="examinfo_id" property="examinfoId" jdbcType="VARCHAR" />
+    <result column="examinfo_name" property="examinfoName" jdbcType="VARCHAR" />
+    <result column="examinfo_time" property="examinfoTime" jdbcType="TIMESTAMP" />
+    <result column="examinfo_starttime" property="examinfoStarttime" jdbcType="TIMESTAMP" />
+    <result column="examinfo_endtime" property="examinfoEndtime" jdbcType="TIMESTAMP" />
+    <result column="examinfo_people" property="examinfoPeople" jdbcType="VARCHAR" />
+    <result column="examinfo_context" property="examinfoContext" jdbcType="VARCHAR" />
+    <result column="examinfo_mark" property="examinfoMark" jdbcType="VARCHAR" />
+    <association  property="test" javaType="com.oems.entity.Test" >
+		     <id column="test_id" property="testId" jdbcType="VARCHAR" />
+			    <result column="test_name" property="testName" jdbcType="VARCHAR" />
+			    <result column="test_class" property="testClass" jdbcType="VARCHAR" />
+			    <result column="test_score" property="testScore" jdbcType="DOUBLE" />
+			    <result column="test_time" property="testTime" jdbcType="TIMESTAMP" />
+			    <result column="test_type" property="testType" jdbcType="VARCHAR" />
+			    <result column="test_mark" property="testMark" jdbcType="VARCHAR" />
+	</association>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    examinfo_id, examinfo_name, examinfo_time, examinfo_starttime, examinfo_endtime, 
+    examinfo_people, examinfo_context, examinfo_mark
+  </sql>
+   <!--   查询需阅试卷 -->
+  <select id="selectAllExamPaper" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select examinfo.*,test.* from examinfo,test where test.test_id=examinfo.examinfo_mark
+  </select> 
+  <!-- 所有已发布考试 -->
+  <select id="selectAllExam" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from examinfo order by  examinfo_endtime asc
+  </select>
+  <!--   查询所有的考试信息 -->
+  <select id="selectAllinfo" resultMap="BaseResultMap" >
+    select 
+    <include refid="Base_Column_List" />
+    from examinfo
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from examinfo
+    where examinfo_id = #{examinfoId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from examinfo
+    where examinfo_id = #{examinfoId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oems.entity.Examinfo" >
+    insert into examinfo (examinfo_id, examinfo_name, examinfo_time, 
+      examinfo_starttime, examinfo_endtime, 
+      examinfo_people, examinfo_context, examinfo_mark
+      )
+    values (#{examinfoId,jdbcType=VARCHAR}, #{examinfoName,jdbcType=VARCHAR}, #{examinfoTime,jdbcType=TIMESTAMP}, 
+      #{examinfoStarttime,jdbcType=TIMESTAMP}, #{examinfoEndtime,jdbcType=TIMESTAMP}, 
+      #{examinfoPeople,jdbcType=VARCHAR}, #{examinfoContext,jdbcType=VARCHAR}, #{examinfoMark,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.oems.entity.Examinfo" >
+    insert into examinfo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="examinfoId != null" >
+        examinfo_id,
+      </if>
+      <if test="examinfoName != null" >
+        examinfo_name,
+      </if>
+      <if test="examinfoTime != null" >
+        examinfo_time,
+      </if>
+      <if test="examinfoStarttime != null" >
+        examinfo_starttime,
+      </if>
+      <if test="examinfoEndtime != null" >
+        examinfo_endtime,
+      </if>
+      <if test="examinfoPeople != null" >
+        examinfo_people,
+      </if>
+      <if test="examinfoContext != null" >
+        examinfo_context,
+      </if>
+      <if test="examinfoMark != null" >
+        examinfo_mark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="examinfoId != null" >
+        #{examinfoId,jdbcType=VARCHAR},
+      </if>
+      <if test="examinfoName != null" >
+        #{examinfoName,jdbcType=VARCHAR},
+      </if>
+      <if test="examinfoTime != null" >
+        #{examinfoTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="examinfoStarttime != null" >
+        #{examinfoStarttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="examinfoEndtime != null" >
+        #{examinfoEndtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="examinfoPeople != null" >
+        #{examinfoPeople,jdbcType=VARCHAR},
+      </if>
+      <if test="examinfoContext != null" >
+        #{examinfoContext,jdbcType=VARCHAR},
+      </if>
+      <if test="examinfoMark != null" >
+        #{examinfoMark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.oems.entity.Examinfo" >
+    update examinfo
+    <set >
+      <if test="examinfoName != null" >
+        examinfo_name = #{examinfoName,jdbcType=VARCHAR},
+      </if>
+      <if test="examinfoTime != null" >
+        examinfo_time = #{examinfoTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="examinfoStarttime != null" >
+        examinfo_starttime = #{examinfoStarttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="examinfoEndtime != null" >
+        examinfo_endtime = #{examinfoEndtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="examinfoPeople != null" >
+        examinfo_people = #{examinfoPeople,jdbcType=VARCHAR},
+      </if>
+      <if test="examinfoContext != null" >
+        examinfo_context = #{examinfoContext,jdbcType=VARCHAR},
+      </if>
+      <if test="examinfoMark != null" >
+        examinfo_mark = #{examinfoMark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where examinfo_id = #{examinfoId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.oems.entity.Examinfo" >
+    update examinfo
+    set examinfo_name = #{examinfoName,jdbcType=VARCHAR},
+      examinfo_time = #{examinfoTime,jdbcType=TIMESTAMP},
+      examinfo_starttime = #{examinfoStarttime,jdbcType=TIMESTAMP},
+      examinfo_endtime = #{examinfoEndtime,jdbcType=TIMESTAMP},
+      examinfo_people = #{examinfoPeople,jdbcType=VARCHAR},
+      examinfo_context = #{examinfoContext,jdbcType=VARCHAR},
+      examinfo_mark = #{examinfoMark,jdbcType=VARCHAR}
+    where examinfo_id = #{examinfoId,jdbcType=VARCHAR}
+  </update>
+</mapper>

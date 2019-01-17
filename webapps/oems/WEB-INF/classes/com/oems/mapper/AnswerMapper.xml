@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.oems.mapper.AnswerMapper" >
+  <resultMap id="BaseResultMap" type="com.oems.entity.Answer" >
+    <id column="answer_id" property="answerId" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="test_id" property="testId" jdbcType="VARCHAR" />
+    <result column="exeam_id" property="exeamId" jdbcType="VARCHAR" />
+    <result column="answer_context" property="answerContext" jdbcType="VARCHAR" />
+    <result column="answer_score" property="answerScore" jdbcType="VARCHAR" />
+    <result column="answer_mark" property="answerMark" jdbcType="VARCHAR" />
+    <collection  property="user" javaType="com.oems.entity.User" >
+		    <id column="user_id" property="userId" jdbcType="VARCHAR" />
+		    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+		    <result column="user_password" property="userPassword" jdbcType="VARCHAR" />
+		    <result column="user_phone" property="userPhone" jdbcType="VARCHAR" />
+		    <result column="user_sex" property="userSex" jdbcType="VARCHAR" />
+		    <result column="user_email" property="userEmail" jdbcType="VARCHAR" />
+		    <result column="user_type" property="userType" jdbcType="VARCHAR" />
+		    <result column="user_mark" property="userMark" jdbcType="VARCHAR" />
+     </collection>
+     <collection  property="exam" javaType="com.oems.entity.Exam" >
+		    <id column="exam_id" property="examId" jdbcType="VARCHAR" />
+		    <result column="exam_name" property="examName" jdbcType="VARCHAR" />
+		    <result column="exam_type" property="examType" jdbcType="VARCHAR" />
+		    <result column="exam_answer" property="examAnswer" jdbcType="VARCHAR" />
+		    <result column="exam_score" property="examScore" jdbcType="DOUBLE" />
+		    <result column="exam_testid" property="examTestid" jdbcType="VARCHAR" />
+		    <result column="exam_mark" property="examMark" jdbcType="VARCHAR" />
+     </collection>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    answer_id, user_id, test_id, exeam_id, answer_context, answer_score, answer_mark
+  </sql>
+  <select id="selectAllanswer" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select *
+    from answer
+    where exeam_id = #{0} 
+  </select>
+  
+   <select id="selectAllTotal" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select answer_score
+    from answer
+    where exeam_id = #{0} and user_id = #{0}
+  </select>
+  <select id="selectAllHadAnswer" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select answer_score
+    from answer
+    where exeam_id = #{0}
+  </select>
+  <select id="selectAllAnswer" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select exam.*,answer.* from exam,answer where answer.exeam_id = exam.exam_id and answer.user_id = #{0} and exam.exam_testid = #{1}
+  </select>
+  <!--   插入大题分数 -->
+  <update id="updateByPrimaryKeySelective" parameterType="com.oems.entity.Answer" >
+    update answer
+    set           
+      answer_score = #{answerScore,jdbcType=VARCHAR}
+    where user_id = #{userId,jdbcType=VARCHAR} and exeam_id = #{exeamId,jdbcType=VARCHAR}
+  </update>
+  
+  <!--   查询该用户的答案 -->
+   <select id="selectUserAnswer" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from answer
+    where user_id = #{userId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from answer
+    where answer_id = #{answerId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from answer
+    where answer_id = #{answerId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oems.entity.Answer" >
+    insert into answer (answer_id, user_id, test_id, 
+      exeam_id, answer_context, answer_score, 
+      answer_mark)
+    values (#{answerId,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{testId,jdbcType=VARCHAR}, 
+      #{exeamId,jdbcType=VARCHAR}, #{answerContext,jdbcType=VARCHAR}, #{answerScore,jdbcType=VARCHAR}, 
+      #{answerMark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.oems.entity.Answer" >
+    insert into answer
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="answerId != null" >
+        answer_id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="testId != null" >
+        test_id,
+      </if>
+      <if test="exeamId != null" >
+        exeam_id,
+      </if>
+      <if test="answerContext != null" >
+        answer_context,
+      </if>
+      <if test="answerScore != null" >
+        answer_score,
+      </if>
+      <if test="answerMark != null" >
+        answer_mark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="answerId != null" >
+        #{answerId,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="testId != null" >
+        #{testId,jdbcType=VARCHAR},
+      </if>
+      <if test="exeamId != null" >
+        #{exeamId,jdbcType=VARCHAR},
+      </if>
+      <if test="answerContext != null" >
+        #{answerContext,jdbcType=VARCHAR},
+      </if>
+      <if test="answerScore != null" >
+        #{answerScore,jdbcType=VARCHAR},
+      </if>
+      <if test="answerMark != null" >
+        #{answerMark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updatess" parameterType="com.oems.entity.Answer" >
+    update answer
+    <set >
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="testId != null" >
+        test_id = #{testId,jdbcType=VARCHAR},
+      </if>
+      <if test="exeamId != null" >
+        exeam_id = #{exeamId,jdbcType=VARCHAR},
+      </if>
+      <if test="answerContext != null" >
+        answer_context = #{answerContext,jdbcType=VARCHAR},
+      </if>
+      <if test="answerScore != null" >
+        answer_score = #{answerScore,jdbcType=VARCHAR},
+      </if>
+      <if test="answerMark != null" >
+        answer_mark = #{answerMark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where answer_id = #{answerId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.oems.entity.Answer" >
+    update answer
+    set user_id = #{userId,jdbcType=VARCHAR},
+      test_id = #{testId,jdbcType=VARCHAR},
+      exeam_id = #{exeamId,jdbcType=VARCHAR},
+      answer_context = #{answerContext,jdbcType=VARCHAR},
+      answer_score = #{answerScore,jdbcType=VARCHAR},
+      answer_mark = #{answerMark,jdbcType=VARCHAR}
+    where answer_id = #{answerId,jdbcType=VARCHAR}
+  </update>
+</mapper>

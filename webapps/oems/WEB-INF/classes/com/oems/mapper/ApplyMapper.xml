@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.oems.mapper.ApplyMapper" >
+  <resultMap id="BaseResultMap" type="com.oems.entity.Apply" >
+    <id column="apply_id" property="applyId" jdbcType="VARCHAR" />
+    <result column="apply_userid" property="applyUserid" jdbcType="VARCHAR" />
+    <result column="apply_name" property="applyName" jdbcType="VARCHAR" />
+    <result column="apply_examinfoid" property="applyExaminfoid" jdbcType="VARCHAR" />
+    <result column="apply_status" property="applyStatus" jdbcType="VARCHAR" />
+    <result column="apply_score" property="applyScore" jdbcType="DOUBLE" />
+    <result column="apply_time" property="applyTime" jdbcType="TIMESTAMP" />
+    <result column="apply_mark" property="applyMark" jdbcType="VARCHAR" />
+    <association column="id" property="examinfo" javaType="com.oems.entity.Examinfo">
+		    <id column="examinfo_id" property="examinfoId" />  
+		    <result column="examinfo_name" property="examinfoName"  />
+		    <result column="examinfo_time" property="examinfoTime"  />
+		    <result column="examinfo_starttime" property="examinfoStarttime"  />
+		    <result column="examinfo_endtime" property="examinfoEndtime"  />
+		    <result column="examinfo_people" property="examinfoPeople"  />
+		    <result column="examinfo_context" property="examinfoContext"  />
+		    <result column="examinfo_mark" property="examinfoMark" />
+	    </association>
+	    <association column="id" property="user" javaType="com.oems.entity.User">
+	        <id column="user_id" property="userId" />
+		    <result column="user_name" property="userName" />
+		    <result column="user_password" property="userPassword"/>
+		    <result column="user_phone" property="userPhone" />
+		    <result column="user_sex" property="userSex" />
+		    <result column="user_email" property="userEmail" />
+		    <result column="user_type" property="userType"  />
+		    <result column="user_mark" property="userMark" />
+	    </association> 
+  </resultMap>
+  <sql id="Base_Column_List" >
+    apply_id, apply_userid, apply_name, apply_examinfoid, apply_status, apply_score, 
+    apply_time, apply_mark
+  </sql>
+   <select id="selectExamUser" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select * from apply where apply_examinfoid=#{0} and apply_status='等待阅卷'
+  </select>
+   <update id="updateScore" parameterType="com.oems.entity.Apply" >
+    update apply
+    set apply_status = #{applyStatus,jdbcType=VARCHAR},
+      apply_score = #{applyScore,jdbcType=DOUBLE}
+     where apply_userid = #{applyUserid,jdbcType=VARCHAR}
+  </update>
+  
+  <select id="selectUserApplyInfo" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select apply.*,examinfo.*,user.*
+    from apply,user,examinfo 
+    where apply.apply_userid=user.user_id and apply.apply_examinfoid=examinfo.examinfo_id and apply.apply_id=#{0}
+     
+  </select>	
+  					
+  <!-- 用户报名信息 -->
+  <select id="selectUserApply" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select apply.*,examinfo.*,user.*
+    from apply,user,examinfo 
+    where apply.apply_userid=user.user_id  and apply.apply_examinfoid=examinfo.examinfo_id and apply.apply_status='正在审核...'
+     order by apply.apply_time asc 
+  </select>
+  <update id="startexam"  parameterType="java.lang.String">
+   update apply
+    set apply_status = '考试已开始' where apply_examinfoid = #{0} and apply_status = '审核已通过'
+  </update>
+  <select id="selectbyuserid" resultMap="BaseResultMap" parameterType="java.lang.String">
+  select <include refid="Base_Column_List" />
+    from apply
+    where apply_userid = #{userid,jdbcType=VARCHAR}
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from apply
+    where apply_id = #{applyId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from apply
+    where apply_id = #{applyId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oems.entity.Apply" >
+    insert into apply (apply_id, apply_userid, apply_name, 
+      apply_examinfoid, apply_status, apply_score, 
+      apply_time, apply_mark)
+    values (#{applyId,jdbcType=VARCHAR}, #{applyUserid,jdbcType=VARCHAR}, #{applyName,jdbcType=VARCHAR}, 
+      #{applyExaminfoid,jdbcType=VARCHAR}, #{applyStatus,jdbcType=VARCHAR}, #{applyScore,jdbcType=DOUBLE}, 
+      #{applyTime,jdbcType=TIMESTAMP}, #{applyMark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.oems.entity.Apply" >
+    insert into apply
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="applyId != null" >
+        apply_id,
+      </if>
+      <if test="applyUserid != null" >
+        apply_userid,
+      </if>
+      <if test="applyName != null" >
+        apply_name,
+      </if>
+      <if test="applyExaminfoid != null" >
+        apply_examinfoid,
+      </if>
+      <if test="applyStatus != null" >
+        apply_status,
+      </if>
+      <if test="applyScore != null" >
+        apply_score,
+      </if>
+      <if test="applyTime != null" >
+        apply_time,
+      </if>
+      <if test="applyMark != null" >
+        apply_mark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="applyId != null" >
+        #{applyId,jdbcType=VARCHAR},
+      </if>
+      <if test="applyUserid != null" >
+        #{applyUserid,jdbcType=VARCHAR},
+      </if>
+      <if test="applyName != null" >
+        #{applyName,jdbcType=VARCHAR},
+      </if>
+      <if test="applyExaminfoid != null" >
+        #{applyExaminfoid,jdbcType=VARCHAR},
+      </if>
+      <if test="applyStatus != null" >
+        #{applyStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="applyScore != null" >
+        #{applyScore,jdbcType=DOUBLE},
+      </if>
+      <if test="applyTime != null" >
+        #{applyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="applyMark != null" >
+        #{applyMark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.oems.entity.Apply" >
+    update apply
+    <set >
+      <if test="applyUserid != null" >
+        apply_userid = #{applyUserid,jdbcType=VARCHAR},
+      </if>
+      <if test="applyName != null" >
+        apply_name = #{applyName,jdbcType=VARCHAR},
+      </if>
+      <if test="applyExaminfoid != null" >
+        apply_examinfoid = #{applyExaminfoid,jdbcType=VARCHAR},
+      </if>
+      <if test="applyStatus != null" >
+        apply_status = #{applyStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="applyScore != null" >
+        apply_score = #{applyScore,jdbcType=DOUBLE},
+      </if>
+      <if test="applyTime != null" >
+        apply_time = #{applyTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="applyMark != null" >
+        apply_mark = #{applyMark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where apply_id = #{applyId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.oems.entity.Apply" >
+    update apply
+    set apply_userid = #{applyUserid,jdbcType=VARCHAR},
+      apply_name = #{applyName,jdbcType=VARCHAR},
+      apply_examinfoid = #{applyExaminfoid,jdbcType=VARCHAR},
+      apply_status = #{applyStatus,jdbcType=VARCHAR},
+      apply_score = #{applyScore,jdbcType=DOUBLE},
+      apply_time = #{applyTime,jdbcType=TIMESTAMP},
+      apply_mark = #{applyMark,jdbcType=VARCHAR}
+    where apply_id = #{applyId,jdbcType=VARCHAR}
+  </update>
+</mapper>

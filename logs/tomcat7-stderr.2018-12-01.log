@@ -1,0 +1,383 @@
+
+2018-12-01 10:10:49 Commons Daemon procrun stderr initialized
+十二月 01, 2018 10:10:51 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server version:        Apache Tomcat/7.0.64
+十二月 01, 2018 10:10:51 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server built:          Aug 19 2015 17:18:06 UTC
+十二月 01, 2018 10:10:51 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server number:         7.0.64.0
+十二月 01, 2018 10:10:51 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Name:               Windows 8
+十二月 01, 2018 10:10:51 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Version:            6.2
+十二月 01, 2018 10:10:51 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Architecture:          amd64
+十二月 01, 2018 10:10:51 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Java Home:             C:\Program Files\Java\jre1.8.0_45
+十二月 01, 2018 10:10:51 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Version:           1.8.0_45-b14
+十二月 01, 2018 10:10:51 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Vendor:            Oracle Corporation
+十二月 01, 2018 10:10:51 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_BASE:         D:\OEMS
+十二月 01, 2018 10:10:51 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_HOME:         D:\OEMS
+十二月 01, 2018 10:10:51 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.home=D:\OEMS
+十二月 01, 2018 10:10:51 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.base=D:\OEMS
+十二月 01, 2018 10:10:51 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.endorsed.dirs=D:\OEMS\endorsed
+十二月 01, 2018 10:10:51 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.io.tmpdir=D:\OEMS\temp
+十二月 01, 2018 10:10:51 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+十二月 01, 2018 10:10:51 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.config.file=D:\OEMS\conf\logging.properties
+十二月 01, 2018 10:10:51 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: exit
+十二月 01, 2018 10:10:51 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Xms128m
+十二月 01, 2018 10:10:51 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Xmx256m
+十二月 01, 2018 10:10:51 上午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: D:\OEMS\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;%JAVA_HOME%\bin;D:\JT\apache-maven-3.5.0\bin;C:\Windows\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;.
+十二月 01, 2018 10:10:51 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["http-bio-8080"]
+十二月 01, 2018 10:10:51 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["ajp-bio-8009"]
+十二月 01, 2018 10:10:51 上午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 1359 ms
+十二月 01, 2018 10:10:51 上午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+十二月 01, 2018 10:10:51 上午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.64
+十二月 01, 2018 10:10:51 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory D:\OEMS\webapps\docs
+十二月 01, 2018 10:10:52 上午 org.apache.catalina.util.SessionIdGeneratorBase createSecureRandom
+信息: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [187] milliseconds.
+十二月 01, 2018 10:10:52 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory D:\OEMS\webapps\docs has finished in 579 ms
+十二月 01, 2018 10:10:52 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory D:\OEMS\webapps\manager
+十二月 01, 2018 10:10:52 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory D:\OEMS\webapps\manager has finished in 109 ms
+十二月 01, 2018 10:10:52 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory D:\OEMS\webapps\ROOT
+十二月 01, 2018 10:10:52 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory D:\OEMS\webapps\ROOT has finished in 47 ms
+十二月 01, 2018 10:10:52 上午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["http-bio-8080"]
+十二月 01, 2018 10:10:52 上午 org.apache.coyote.AbstractProtocol start
+信息: Starting ProtocolHandler ["ajp-bio-8009"]
+十二月 01, 2018 10:10:52 上午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 829 ms
+十二月 01, 2018 10:14:32 上午 org.apache.catalina.startup.HostConfig deployWAR
+信息: Deploying web application archive D:\OEMS\webapps\oems.war
+十二月 01, 2018 10:14:33 上午 org.apache.catalina.loader.WebappClassLoader validateJarFile
+信息: validateJarFile(D:\OEMS\webapps\oems\WEB-INF\lib\servlet-api.jar) - jar not loaded. See Servlet Spec 3.0, section 10.7.2. Offending class: javax/servlet/Servlet.class
+十二月 01, 2018 10:14:34 上午 org.apache.catalina.startup.TldConfig execute
+信息: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+十二月 01, 2018 10:14:35 上午 org.apache.catalina.startup.HostConfig deployWAR
+信息: Deployment of web application archive D:\OEMS\webapps\oems.war has finished in 2,844 ms
+十二月 01, 2018 10:15:05 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["http-bio-8080"]
+十二月 01, 2018 10:15:05 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["ajp-bio-8009"]
+十二月 01, 2018 10:15:05 上午 org.apache.catalina.core.StandardService stopInternal
+信息: Stopping service Catalina
+十二月 01, 2018 10:15:05 上午 org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+严重: The web application [/oems] registered the JDBC driver [com.mysql.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+十二月 01, 2018 10:15:05 上午 org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+严重: The web application [/oems] appears to have started a thread named [Timer-0] but has failed to stop it. This is very likely to create a memory leak.
+十二月 01, 2018 10:15:05 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["http-bio-8080"]
+十二月 01, 2018 10:15:05 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["ajp-bio-8009"]
+
+2018-12-01 10:19:35 Commons Daemon procrun stderr initialized
+十二月 01, 2018 10:19:35 上午 org.apache.tomcat.util.digester.SetPropertiesRule begin
+警告: [SetPropertiesRule]{Server/Service/Engine/Host/Context} Setting property 'debug' to '0' did not find a matching property.
+十二月 01, 2018 10:19:35 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server version:        Apache Tomcat/7.0.64
+十二月 01, 2018 10:19:35 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server built:          Aug 19 2015 17:18:06 UTC
+十二月 01, 2018 10:19:35 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Server number:         7.0.64.0
+十二月 01, 2018 10:19:35 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Name:               Windows 8
+十二月 01, 2018 10:19:35 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: OS Version:            6.2
+十二月 01, 2018 10:19:35 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Architecture:          amd64
+十二月 01, 2018 10:19:35 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Java Home:             C:\Program Files\Java\jre1.8.0_45
+十二月 01, 2018 10:19:35 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Version:           1.8.0_45-b14
+十二月 01, 2018 10:19:35 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: JVM Vendor:            Oracle Corporation
+十二月 01, 2018 10:19:35 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_BASE:         D:\OEMS
+十二月 01, 2018 10:19:35 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: CATALINA_HOME:         D:\OEMS
+十二月 01, 2018 10:19:35 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.home=D:\OEMS
+十二月 01, 2018 10:19:35 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Dcatalina.base=D:\OEMS
+十二月 01, 2018 10:19:35 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.endorsed.dirs=D:\OEMS\endorsed
+十二月 01, 2018 10:19:35 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.io.tmpdir=D:\OEMS\temp
+十二月 01, 2018 10:19:35 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+十二月 01, 2018 10:19:35 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Djava.util.logging.config.file=D:\OEMS\conf\logging.properties
+十二月 01, 2018 10:19:35 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: exit
+十二月 01, 2018 10:19:35 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Xms128m
+十二月 01, 2018 10:19:35 上午 org.apache.catalina.startup.VersionLoggerListener log
+信息: Command line argument: -Xmx256m
+十二月 01, 2018 10:19:35 上午 org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+信息: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: D:\OEMS\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;%JAVA_HOME%\bin;D:\JT\apache-maven-3.5.0\bin;C:\Windows\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;.
+十二月 01, 2018 10:19:36 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["http-bio-8080"]
+十二月 01, 2018 10:19:36 上午 org.apache.coyote.AbstractProtocol init
+严重: Failed to initialize end point associated with ProtocolHandler ["http-bio-8080"]
+java.net.BindException: Address already in use: JVM_Bind <null>:8080
+	at org.apache.tomcat.util.net.JIoEndpoint.bind(JIoEndpoint.java:413)
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:651)
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:434)
+	at org.apache.coyote.http11.AbstractHttp11JsseProtocol.init(AbstractHttp11JsseProtocol.java:119)
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:978)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:559)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:821)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:638)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:663)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:280)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:454)
+Caused by: java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.bind(Unknown Source)
+	at java.net.PlainSocketImpl.bind(Unknown Source)
+	at java.net.ServerSocket.bind(Unknown Source)
+	at java.net.ServerSocket.<init>(Unknown Source)
+	at java.net.ServerSocket.<init>(Unknown Source)
+	at org.apache.tomcat.util.net.DefaultServerSocketFactory.createSocket(DefaultServerSocketFactory.java:49)
+	at org.apache.tomcat.util.net.JIoEndpoint.bind(JIoEndpoint.java:400)
+	... 17 more
+
+十二月 01, 2018 10:19:36 上午 org.apache.catalina.core.StandardService initInternal
+严重: Failed to initialize connector [Connector[HTTP/1.1-8080]]
+org.apache.catalina.LifecycleException: Failed to initialize component [Connector[HTTP/1.1-8080]]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:106)
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:559)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:821)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:638)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:663)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:280)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:454)
+Caused by: org.apache.catalina.LifecycleException: Protocol handler initialization failed
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:980)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	... 12 more
+Caused by: java.net.BindException: Address already in use: JVM_Bind <null>:8080
+	at org.apache.tomcat.util.net.JIoEndpoint.bind(JIoEndpoint.java:413)
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:651)
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:434)
+	at org.apache.coyote.http11.AbstractHttp11JsseProtocol.init(AbstractHttp11JsseProtocol.java:119)
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:978)
+	... 13 more
+Caused by: java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.bind(Unknown Source)
+	at java.net.PlainSocketImpl.bind(Unknown Source)
+	at java.net.ServerSocket.bind(Unknown Source)
+	at java.net.ServerSocket.<init>(Unknown Source)
+	at java.net.ServerSocket.<init>(Unknown Source)
+	at org.apache.tomcat.util.net.DefaultServerSocketFactory.createSocket(DefaultServerSocketFactory.java:49)
+	at org.apache.tomcat.util.net.JIoEndpoint.bind(JIoEndpoint.java:400)
+	... 17 more
+
+十二月 01, 2018 10:19:36 上午 org.apache.coyote.AbstractProtocol init
+信息: Initializing ProtocolHandler ["ajp-bio-8009"]
+十二月 01, 2018 10:19:36 上午 org.apache.coyote.AbstractProtocol init
+严重: Failed to initialize end point associated with ProtocolHandler ["ajp-bio-8009"]
+java.net.BindException: Address already in use: JVM_Bind <null>:8009
+	at org.apache.tomcat.util.net.JIoEndpoint.bind(JIoEndpoint.java:413)
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:651)
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:434)
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:978)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:559)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:821)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:638)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:663)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:280)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:454)
+Caused by: java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.bind(Unknown Source)
+	at java.net.PlainSocketImpl.bind(Unknown Source)
+	at java.net.ServerSocket.bind(Unknown Source)
+	at java.net.ServerSocket.<init>(Unknown Source)
+	at java.net.ServerSocket.<init>(Unknown Source)
+	at org.apache.tomcat.util.net.DefaultServerSocketFactory.createSocket(DefaultServerSocketFactory.java:49)
+	at org.apache.tomcat.util.net.JIoEndpoint.bind(JIoEndpoint.java:400)
+	... 16 more
+
+十二月 01, 2018 10:19:36 上午 org.apache.catalina.core.StandardService initInternal
+严重: Failed to initialize connector [Connector[AJP/1.3-8009]]
+org.apache.catalina.LifecycleException: Failed to initialize component [Connector[AJP/1.3-8009]]
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:106)
+	at org.apache.catalina.core.StandardService.initInternal(StandardService.java:559)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:821)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:638)
+	at org.apache.catalina.startup.Catalina.load(Catalina.java:663)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:280)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:454)
+Caused by: org.apache.catalina.LifecycleException: Protocol handler initialization failed
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:980)
+	at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:102)
+	... 12 more
+Caused by: java.net.BindException: Address already in use: JVM_Bind <null>:8009
+	at org.apache.tomcat.util.net.JIoEndpoint.bind(JIoEndpoint.java:413)
+	at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:651)
+	at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:434)
+	at org.apache.catalina.connector.Connector.initInternal(Connector.java:978)
+	... 13 more
+Caused by: java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.bind(Unknown Source)
+	at java.net.PlainSocketImpl.bind(Unknown Source)
+	at java.net.ServerSocket.bind(Unknown Source)
+	at java.net.ServerSocket.<init>(Unknown Source)
+	at java.net.ServerSocket.<init>(Unknown Source)
+	at org.apache.tomcat.util.net.DefaultServerSocketFactory.createSocket(DefaultServerSocketFactory.java:49)
+	at org.apache.tomcat.util.net.JIoEndpoint.bind(JIoEndpoint.java:400)
+	... 16 more
+
+十二月 01, 2018 10:19:36 上午 org.apache.catalina.startup.Catalina load
+信息: Initialization processed in 556 ms
+十二月 01, 2018 10:19:36 上午 org.apache.catalina.core.StandardService startInternal
+信息: Starting service Catalina
+十二月 01, 2018 10:19:36 上午 org.apache.catalina.core.StandardEngine startInternal
+信息: Starting Servlet Engine: Apache Tomcat/7.0.64
+十二月 01, 2018 10:19:36 上午 org.apache.catalina.ha.tcp.SimpleTcpCluster startInternal
+信息: Cluster is about to start
+十二月 01, 2018 10:19:36 上午 org.apache.catalina.tribes.transport.ReceiverBase bind
+信息: Receiver Server Socket bound to:/172.162.1.42:4000
+十二月 01, 2018 10:19:36 上午 org.apache.catalina.tribes.membership.McastServiceImpl setupSocket
+信息: Setting cluster mcast soTimeout to 500
+十二月 01, 2018 10:19:36 上午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Sleeping for 1000 milliseconds to establish cluster membership, start level:4
+十二月 01, 2018 10:19:36 上午 org.apache.catalina.ha.tcp.SimpleTcpCluster memberAdded
+信息: Replication member added:org.apache.catalina.tribes.membership.MemberImpl[tcp://{172, 162, 1, 43}:4000,{172, 162, 1, 43},4000, alive=58883, securePort=-1, UDP Port=-1, id={-25 -14 89 -86 94 61 73 91 -104 -100 -39 -98 -128 -115 -64 -80 }, payload={}, command={}, domain={}, ]
+十二月 01, 2018 10:19:37 上午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Done sleeping, membership established, start level:4
+十二月 01, 2018 10:19:37 上午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Sleeping for 1000 milliseconds to establish cluster membership, start level:8
+十二月 01, 2018 10:19:37 上午 org.apache.catalina.tribes.io.BufferPool getBufferPool
+信息: Created a buffer pool with max size:104857600 bytes of type:org.apache.catalina.tribes.io.BufferPool15Impl
+十二月 01, 2018 10:19:38 上午 org.apache.catalina.tribes.membership.McastServiceImpl waitForMembers
+信息: Done sleeping, membership established, start level:8
+十二月 01, 2018 10:19:38 上午 org.apache.catalina.ha.deploy.FarmWarDeployer start
+信息: Cluster FarmWarDeployer started.
+十二月 01, 2018 10:19:38 上午 org.apache.catalina.loader.WebappClassLoader validateJarFile
+信息: validateJarFile(D:\OEMS\webapps\oems\WEB-INF\lib\servlet-api.jar) - jar not loaded. See Servlet Spec 3.0, section 10.7.2. Offending class: javax/servlet/Servlet.class
+十二月 01, 2018 10:19:39 上午 org.apache.catalina.startup.TldConfig execute
+信息: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+十二月 01, 2018 10:19:40 上午 org.apache.catalina.ha.session.JvmRouteBinderValve startInternal
+信息: JvmRouteBinderValve started
+十二月 01, 2018 10:19:40 上午 org.apache.catalina.startup.HostConfig deployWAR
+信息: Deploying web application archive D:\OEMS\webapps\oems.war
+十二月 01, 2018 10:19:40 上午 org.apache.catalina.loader.WebappClassLoader validateJarFile
+信息: validateJarFile(D:\OEMS\webapps\oems\WEB-INF\lib\servlet-api.jar) - jar not loaded. See Servlet Spec 3.0, section 10.7.2. Offending class: javax/servlet/Servlet.class
+十二月 01, 2018 10:19:41 上午 org.apache.catalina.startup.TldConfig execute
+信息: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+十二月 01, 2018 10:19:42 上午 org.apache.catalina.startup.HostConfig deployWAR
+信息: Deployment of web application archive D:\OEMS\webapps\oems.war has finished in 1,625 ms
+十二月 01, 2018 10:19:42 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory D:\OEMS\webapps\docs
+十二月 01, 2018 10:19:42 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory D:\OEMS\webapps\docs has finished in 47 ms
+十二月 01, 2018 10:19:42 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deploying web application directory D:\OEMS\webapps\manager
+十二月 01, 2018 10:19:42 上午 org.apache.catalina.startup.HostConfig deployDirectory
+信息: Deployment of web application directory D:\OEMS\webapps\manager has finished in 47 ms
+十二月 01, 2018 10:19:42 上午 org.apache.catalina.startup.Catalina start
+信息: Server startup in 6233 ms
+十二月 01, 2018 10:19:42 上午 org.apache.catalina.core.StandardServer await
+严重: StandardServer.await: create[localhost:8005]: 
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.bind(Unknown Source)
+	at java.net.PlainSocketImpl.bind(Unknown Source)
+	at java.net.ServerSocket.bind(Unknown Source)
+	at java.net.ServerSocket.<init>(Unknown Source)
+	at org.apache.catalina.core.StandardServer.await(StandardServer.java:427)
+	at org.apache.catalina.startup.Catalina.await(Catalina.java:777)
+	at org.apache.catalina.startup.Catalina.start(Catalina.java:723)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:321)
+	at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:455)
+
+十二月 01, 2018 10:19:42 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["http-bio-8080"]
+十二月 01, 2018 10:19:42 上午 org.apache.coyote.AbstractProtocol pause
+信息: Pausing ProtocolHandler ["ajp-bio-8009"]
+十二月 01, 2018 10:19:42 上午 org.apache.catalina.core.StandardService stopInternal
+信息: Stopping service Catalina
+十二月 01, 2018 10:19:42 上午 org.apache.catalina.ha.session.JvmRouteBinderValve stopInternal
+信息: JvmRouteBinderValve stopped
+十二月 01, 2018 10:19:42 上午 org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+严重: The web application [] registered the JDBC driver [com.mysql.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+十二月 01, 2018 10:19:42 上午 org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+严重: The web application [] appears to have started a thread named [Timer-0] but has failed to stop it. This is very likely to create a memory leak.
+十二月 01, 2018 10:19:42 上午 org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+严重: The web application [/oems] registered the JDBC driver [com.mysql.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+十二月 01, 2018 10:19:42 上午 org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+严重: The web application [/oems] appears to have started a thread named [Timer-1] but has failed to stop it. This is very likely to create a memory leak.
+十二月 01, 2018 10:19:42 上午 org.apache.catalina.ha.deploy.FarmWarDeployer stop
+信息: Cluster FarmWarDeployer stopped.
+十二月 01, 2018 10:19:42 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["http-bio-8080"]
+十二月 01, 2018 10:19:42 上午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["http-bio-8080"]
+十二月 01, 2018 10:19:42 上午 org.apache.coyote.AbstractProtocol stop
+信息: Stopping ProtocolHandler ["ajp-bio-8009"]
+十二月 01, 2018 10:19:42 上午 org.apache.coyote.AbstractProtocol destroy
+信息: Destroying ProtocolHandler ["ajp-bio-8009"]

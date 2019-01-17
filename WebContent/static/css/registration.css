@@ -1,0 +1,105 @@
+.registration-content{	
+	width: 100%;
+	text-align: center;
+}
+.registration-content-one{
+	margin-left: 30px;
+    margin-right: 30px;
+    margin-top:20px;
+    float:left;
+    width: 19%;
+}
+a:HOVER {
+	color:#ff9933;
+}
+.student-register{
+	border: 1px solid ;
+	margin-left:20px;
+	margin-top:30px;
+	padding-top:5px;
+	width: 100px;
+	height: 30px;
+	text-align:center;
+	background-color: #cdcdcd;	
+}
+
+.student-register:HOVER {
+	
+	background-color: #33ccff;
+}
+.registration-background{
+	background-image: url(../images/registration-background_1.jpg);
+	width: 1170px;
+	height: 318px;
+}
+.col-md-3 column:FOCUS {
+	border:1px solid red;
+}
+.Examination-introduction{
+	top:20px;
+	margin-left: 30px;
+	margin-right: 30px;
+	width: 200px;
+	color: gray;
+	
+}
+.center-title{
+	text-align: center;
+}
+.page-text{
+	position: absolute;
+	right: 100px;
+	top:52px;
+	color: red;
+	font-size: 20px;
+}
+.page-button-submit{
+	position: absolute;
+	right: 20px;
+	top:50px;
+	width:60px;
+	height:30px;
+	padding-top:5px;
+	text-align:center;
+	border: 1px solid #ff9933;
+	background-color: #ff9900;
+}
+.exam-title-info{
+	margin-top:25px;
+	font-size: 18px;	
+}
+.exam-score{
+	color: red;
+}
+.exam-content-selectinfo{
+	padding-top:5px;
+	padding-bottom:10px;
+	margin-top:20px;
+	margin-left: 40px;
+	margin-right:72px;
+	background-color: #dddddd;
+}
+.exam-content-textinfo{
+	height:200px;
+	margin-top:20px;
+	margin-left: 40px;
+	margin-right:72px;
+	border:6px solid #dddddd;
+	
+}
+.exam-content-answer{
+	margin-top:5px;
+	margin-left:45px;
+	margin-right:72px;
+	color: red;
+	
+}
+.page-button-lastsubmit{
+	margin-left:45px;
+	width:60px;
+	height:30px;
+	padding-top:5px;
+	text-align:center;
+	border: 1px solid #ff9933;
+	background-color: #ff9900;
+}

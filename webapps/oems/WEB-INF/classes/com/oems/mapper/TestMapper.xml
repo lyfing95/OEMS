@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.oems.mapper.TestMapper" >
+  <resultMap id="BaseResultMap" type="com.oems.entity.Test" >
+    <id column="test_id" property="testId" jdbcType="VARCHAR" />
+    <result column="test_name" property="testName" jdbcType="VARCHAR" />
+    <result column="test_class" property="testClass" jdbcType="VARCHAR" />
+    <result column="test_score" property="testScore" jdbcType="DOUBLE" />
+    <result column="test_time" property="testTime" jdbcType="TIMESTAMP" />
+    <result column="test_type" property="testType" jdbcType="VARCHAR" />
+    <result column="test_mark" property="testMark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    test_id, test_name, test_class, test_score, test_time, test_type, test_mark
+  </sql>
+    <!--  所有试卷 -->
+  <select id="selectAllTest" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from test
+  </select>
+ <!--  考试试卷 -->
+  <select id="selectAllTestForExam" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from test
+    where test_type='考试试卷'
+  </select>
+  <select id="selectindex" resultMap="BaseResultMap">
+  select 
+    <include refid="Base_Column_List" />
+  from test limit 0,6
+  </select>
+  <select id="selecttestmaxpage" resultType="int" parameterType="java.lang.String">
+  select count(1) as geshu from test 
+   where  test_name like concat('%',#{text},'%') or test_class like concat('%',#{text},'%') and test_type = '模拟试卷' 
+  </select>
+  <select id="selecttest" resultMap="BaseResultMap" parameterType="java.lang.String">
+   select 
+    <include refid="Base_Column_List" />
+    from test where   test_name like concat('%',#{text},'%') or test_class like concat('%',#{text},'%') and test_type = '模拟试卷' 
+    limit #{page},#{rows}
+  </select>
+  <select id="selecttotal" resultType="int">
+  select count(1) as geshu from test  where test_type = '模拟试卷'
+  </select>
+  <select id="selectall" resultMap="BaseResultMap" parameterType="int">
+   select 
+    <include refid="Base_Column_List" />
+    from test
+    where test_type = '模拟试卷'   limit #{page},#{rows}
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from test
+    where test_id = #{testId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from test
+    where test_id = #{testId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.oems.entity.Test" >
+    insert into test (test_id, test_name, test_class, 
+      test_score, test_time, test_type, 
+      test_mark)
+    values (#{testId,jdbcType=VARCHAR}, #{testName,jdbcType=VARCHAR}, #{testClass,jdbcType=VARCHAR}, 
+      #{testScore,jdbcType=DOUBLE}, #{testTime,jdbcType=TIMESTAMP}, #{testType,jdbcType=VARCHAR}, 
+      #{testMark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.oems.entity.Test" >
+    insert into test
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="testId != null" >
+        test_id,
+      </if>
+      <if test="testName != null" >
+        test_name,
+      </if>
+      <if test="testClass != null" >
+        test_class,
+      </if>
+      <if test="testScore != null" >
+        test_score,
+      </if>
+      <if test="testTime != null" >
+        test_time,
+      </if>
+      <if test="testType != null" >
+        test_type,
+      </if>
+      <if test="testMark != null" >
+        test_mark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="testId != null" >
+        #{testId,jdbcType=VARCHAR},
+      </if>
+      <if test="testName != null" >
+        #{testName,jdbcType=VARCHAR},
+      </if>
+      <if test="testClass != null" >
+        #{testClass,jdbcType=VARCHAR},
+      </if>
+      <if test="testScore != null" >
+        #{testScore,jdbcType=DOUBLE},
+      </if>
+      <if test="testTime != null" >
+        #{testTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="testType != null" >
+        #{testType,jdbcType=VARCHAR},
+      </if>
+      <if test="testMark != null" >
+        #{testMark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.oems.entity.Test" >
+    update test
+    <set >
+      <if test="testName != null" >
+        test_name = #{testName,jdbcType=VARCHAR},
+      </if>
+      <if test="testClass != null" >
+        test_class = #{testClass,jdbcType=VARCHAR},
+      </if>
+      <if test="testScore != null" >
+        test_score = #{testScore,jdbcType=DOUBLE},
+      </if>
+      <if test="testTime != null" >
+        test_time = #{testTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="testType != null" >
+        test_type = #{testType,jdbcType=VARCHAR},
+      </if>
+      <if test="testMark != null" >
+        test_mark = #{testMark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where test_id = #{testId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.oems.entity.Test" >
+    update test
+    set test_name = #{testName,jdbcType=VARCHAR},
+      test_class = #{testClass,jdbcType=VARCHAR},
+      test_score = #{testScore,jdbcType=DOUBLE},
+      test_time = #{testTime,jdbcType=TIMESTAMP},
+      test_type = #{testType,jdbcType=VARCHAR},
+      test_mark = #{testMark,jdbcType=VARCHAR}
+    where test_id = #{testId,jdbcType=VARCHAR}
+  </update>
+</mapper>
